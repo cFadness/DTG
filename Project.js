@@ -229,6 +229,32 @@ function randomRestaurantSelector(arrayOne,arrayTwo){
     }
 }
 
+let transportationPlaceHolder=["Transportation"]
+let transportationArray=["Rental Car", "Biking", "Walking", "Uber"]
+function randomTransportationSelector(arrayOne,arrayTwo){
+    let randomNumber=Math.floor(Math.random() * arrayOne.length)
+    if(firstPrompt=="Next" || secondPrompt=="3"){
+        arrayTwo.push(arrayOne[randomNumber])
+        return arrayOne[randomNumber]
+    }
+    else{
+        return arrayTwo[arrayTwo.length-1]
+    }
+}
+
+let entertainmentPlaceHolder=["Entertainment"]
+let entertainmentArray=["Sight seeing", "Bowling", "Comedy Show", "Dancing", "Movie Theater"]
+function randomEntertainmentSelector(arrayOne,arrayTwo){
+    let randomNumber=Math.floor(Math.random() * arrayOne.length)
+    if(firstPrompt=="Next" || secondPrompt=="4"){
+        arrayTwo.push(arrayOne[randomNumber])
+        return arrayOne[randomNumber]
+    }
+    else{
+        return arrayTwo[arrayTwo.length-1]
+    }
+}
+
 firstPrompt=prompt(`This is the Random Trip Generator.
 
 ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
