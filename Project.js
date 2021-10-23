@@ -202,7 +202,7 @@
 
 let firstPrompt
 let secondPrompt
-let restaurantPlaceHolder=["Type 'Next' to continue"]
+let restaurantPlaceHolder=["Restaurant"]
 let restaurantArray=["McDonald's", "Wendy's", "Burger King", "White Castle"]
 function randomRestaurantSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
@@ -215,22 +215,31 @@ function randomRestaurantSelector(arrayOne,arrayTwo){
     }
 }
 
-firstPrompt=prompt(`Hello, type 'Next' to continue
-${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
-
-secondPrompt=prompt(`Your trip looks like this:
+firstPrompt=prompt(`This is the Random Trip Generator.
 
 ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
 
-Enter 1,2,3, or 4 to make changes. When satisfied, enter OK`)
+Type 'Next' to continue`)
+
+secondPrompt=prompt(`Your trip looks like this:
+
+1. Destination: 
+2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+3. Transportation: 
+4. Entertainment: 
+
+Enter 1, 2, 3, or 4 to make changes. When satisfied, enter 'OK'`)
 
 firstPrompt="Anything, but 'Next'"
 
 while(secondPrompt>=1 && secondPrompt<=4){
     secondPrompt=prompt(`Your trip looks like this:
 
-    ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
-    
+    1. Destination: 
+    2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+    3. Transportation: 
+    4. Entertainment: 
+
     Enter 1,2,3, or 4 to make changes. When satisfied, enter OK`)
 }
 
