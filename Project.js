@@ -218,20 +218,28 @@ function randomRestaurantSelector(arrayOne,arrayTwo){
 firstPrompt=prompt(`Hello, type 'Next' to continue
 ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
 
-secondPrompt=prompt(`Press 1, 2, 3, or 4, then OK
+secondPrompt=prompt(`Your trip looks like this:
 
-${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
-firstPrompt=99
+${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+
+Enter 1,2,3, or 4 to make changes. When satisfied, enter OK`)
+
+firstPrompt="Anything, but 'Next'"
+
 while(secondPrompt>=1 && secondPrompt<=4){
-    secondPrompt=prompt(`Press 1, 2, 3, or 4, then OK
+    secondPrompt=prompt(`Your trip looks like this:
 
-    ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
+    ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+    
+    Enter 1,2,3, or 4 to make changes. When satisfied, enter OK`)
 }
 
-
-
-
-
-
+if(secondPrompt==="OK"){
+    prompt("Trip confirmed! Press OK and view your details in the console.")
+    console.log(randomRestaurantSelector(restaurantArray, restaurantPlaceHolder))
+}
+else{
+    prompt("Error! Invalid syntax")
+}
 
 
