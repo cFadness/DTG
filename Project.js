@@ -263,10 +263,10 @@ Type 'Next' to continue`)
 
 secondPrompt=prompt(`Your trip looks like this:
 
-1. Destination: 
+1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
 2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
-3. Transportation: 
-4. Entertainment: 
+3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
+4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
 Enter 1, 2, 3, or 4 to make changes. When satisfied, enter 'OK'`)
 
@@ -275,20 +275,22 @@ firstPrompt="Anything, but 'Next'"
 while(secondPrompt>=1 && secondPrompt<=4){
     secondPrompt=prompt(`Your trip looks like this:
 
-    1. Destination: 
+    1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
     2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
-    3. Transportation: 
-    4. Entertainment: 
+    3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
+    4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
     Enter 1,2,3, or 4 to make changes. When satisfied, enter OK`)
 }
 
 if(secondPrompt==="OK"){
     prompt("Trip confirmed! Press OK and view your details in the console.")
+    console.log(`Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}`)
     console.log(`Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
+    console.log(`Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}`)
+    console.log(`Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}`)
 }
 else{
     prompt("Error! Invalid syntax")
 }
-
 
