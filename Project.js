@@ -1,105 +1,136 @@
 "use strict"
 
+let destinationVariable
 let randomNumber0to9=Math.floor(Math.random() * 10)
-function randomDestination(theRandomNumber){            // Tested function. Works properly.
+function randomDestination(theRandomNumber, destination){            // Tested function. Works properly.
     if(theRandomNumber===0){
-        return "Houston"
+        destination="Houston"
+        return destination
     }
     else if(theRandomNumber===1){
-        return "Chicago"
+        destination="Chicago"
+        return destination
     }
     else if(theRandomNumber===2){
-        return "Duluth"
+        destination="Duluth"
+        return destination
     }
     else if(theRandomNumber===3){
-        return "San Diego"
+        destination="San Diego"
+        return destination
     }
     else if(theRandomNumber===4){
-        return "Salem"
+        destination="Salem"
+        return destination
     }
     else if(theRandomNumber===5){
-        return "Miami"
+        destination="Miami"
+        return destination
     }
     else if(theRandomNumber===6){
-        return "Phoenix"
+        destination="Phoenix"
+        return destination
     }
     else if(theRandomNumber===7){
-        return "Cleveland"
+        destination="Cleveland"
+        return destination
     }
     else if(theRandomNumber===8){
-        return "New York City"
+        destination="New York City"
+        return destination
     }
     else{
-        return "Jacksonville"
+        destination="Jacksonville"
+        return destination
     }
 }
-let randomDestination10=randomDestination(randomNumber0to9)
+let randomDestination10=randomDestination(randomNumber0to9, destinationVariable)
 
+let restaurantVariable
 let randomNumber0to7=Math.floor(Math.random() * 8)
-function randomRestaurant(theRandomNumber){               // Tested function. Works properly.
+function randomRestaurant(theRandomNumber, restaurant){                
     if(theRandomNumber===0){
-        return "McDonald's"
+        restaurant="McDonald's"
+        return restaurant
     }
     else if(theRandomNumber===1){
-        return "Wendy's"
+        restaurant="Wendy's"
+        return restaurant
     }
     else if(theRandomNumber===2){
-        return "Burger King"
+        restaurant="Burger King"
+        return restaurant
     }
     else if(theRandomNumber===3){
-        return "Taco Bell"
+        restaurant="Taco Bell"
+        return restaurant
     }
     else if(theRandomNumber===4){
-        return "Subway"
+        restaurant="Subway"
+        return restaurant
     }
     else if(theRandomNumber===5){
-        return "Jack in the Box"
+        restaurant="Jack in the Box"
+        return restaurant
     }
     else if(theRandomNumber===6){
-        return "White Castle"
+        restaurant="White Castle"
+        return restaurant
     }
     else{
-        return "Buffalo Wild Wings"
+        restaurant="Buffalo Wild Wings"
+        return restaurant
     }
 }
-let randomRestaurant8=randomRestaurant(randomNumber0to7)
+let randomRestaurant8=randomRestaurant(randomNumber0to7, restaurantVariable)
 
+let transportationVariable
 let randomNumber0to3=Math.floor(Math.random() * 4)
-function randomTransportation(theRandomNumber){             // Tested function. Works properly.
+function randomTransportation(theRandomNumber, transportation){              
     if(theRandomNumber===0){
-        return "Rental Car"
+        transportation="Rental Car"
+        return transportation
     }
     else if(theRandomNumber===1){
-        return "Biking"
+        transportation="Biking"
+        return transportation
     }
     else if(theRandomNumber===2){
-        return "Uber"
+        transportation="Uber"
+        return transportation
     }
     else{
-        return "Walking"
+        transportation="Walking"
+        return transportation
     }
 }
-let randomTransportation4=randomTransportation(randomNumber0to3)
+let randomTransportation4=randomTransportation(randomNumber0to3, transportationVariable)
 
+let entertainmentVariable
 let randomNumber0to4=Math.floor(Math.random() * 5)
-function randomEntertainment(theRandomNumber){          // Tested function. Works properly.
+function randomEntertainment(theRandomNumber, entertainment){           
     if(theRandomNumber===0){
-        return "Sight Seeing"
+        entertainment="Sight Seeing"
+        return entertainment
     }
     else if(theRandomNumber===1){
-        return "Bowling"
+        entertainment="Bowling"
+        return entertainment
     }
     else if(theRandomNumber===2){
-        return "Comedy Show"
+        entertainment="Comedy Show"
+        return entertainment
     }
     else if(theRandomNumber===3){
-        return "Dancing"
+        entertainment="Dancing"
+        return entertainment
     }
     else{
-        return "Movie Theatre"
+        entertainment="Movie Theatre"
+        return entertainment
     }
 }
-let randomEntertainment5=randomEntertainment(randomNumber0to4)
+let randomEntertainment5=randomEntertainment(randomNumber0to4, entertainmentVariable)
 
 let tripDetails=`1. Destination: ${randomDestination10}
 2. Restaurant: ${randomRestaurant8}
@@ -113,14 +144,58 @@ ${tripDetails}
 Would you like to change it? "Yes" or "No"`)              // First prompt is working and looks good.
 
 if(firstPrompt==="Yes"){
-    let 
-    newPrompt=prompt("What would you like to change? )
-}
-else if(firstPrompt==="No"){
-    prompt(`Your trip is complete. Have fun!
+    let newPrompt=prompt(`What would you like to change? Enter 1, 2, 3, or 4
     
-    Trip details:
+    1. Destination: ${destinationVariable}
+    2. Restaurant: ${restaurantVariable}
+    3. Transportation: ${transportationVariable}
+    4. Entertainment: ${entertainmentVariable}
     
-    `)
-}
+    Enter "OK" to finish selection`)
+    while(newPrompt>=1 && newPrompt<=4){
+        if(newPrompt==1){
+            newPrompt=prompt(`What would you like to change? Enter 1, 2, 3, or 4
+    
+    1. Destination: ${randomDestination10}
+    2. Restaurant: ${restaurantVariable}
+    3. Transportation: ${transportationVariable}
+    4. Entertainment: ${entertainmentVariable}
+    
+    Enter "OK" to finish selection`)
+        }
+        else if(newPrompt==2){
+            newPrompt=prompt(`What would you like to change? Enter 1, 2, 3, or 4
+    
+    1. Destination: ${destinationVariable}
+    2. Restaurant: ${randomRestaurant8}
+    3. Transportation: ${transportationVariable}
+    4. Entertainment: ${entertainmentVariable}
+    
+    Enter "OK" to finish selection`)
+        }
+        else if(newPrompt==3){
+            newPrompt=prompt(`What would you like to change? Enter 1, 2, 3, or 4
+    
+    1. Destination: ${destinationVariable}
+    2. Restaurant: ${restaurantVariable}
+    3. Transportation: ${randomTransportation4}
+    4. Entertainment: ${entertainmentVariable}
+    
+    Enter "OK" to finish selection`)
+        }
+        else if(newPrompt==4){
+            newPrompt=prompt(`What would you like to change? Enter 1, 2, 3, or 4
+    
+    1. Destination: ${destinationVariable}
+    2. Restaurant: ${restaurantVariable}
+    3. Transportation: ${transportationVariable}
+    4. Entertainment: ${randomEntertainment5}
+    
+    Enter "OK" to finish selection`)
+        }
+        else{}
+    }
+    if(newPrompt==="OK"){
 
+    }
+}
