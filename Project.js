@@ -202,6 +202,20 @@
 
 let firstPrompt
 let secondPrompt
+
+let destinationPlaceHolder=["Destination"]
+let destinationArray=["Houston", "Chicago", "Duluth", "San Diego", "Salem", "Miami", "Phoenix", "Cleveland", "New York City", "Jacksonville"]
+function randomDestinationSelector(arrayOne,arrayTwo){
+    let randomNumber=Math.floor(Math.random() * arrayOne.length)
+    if(firstPrompt=="Next" || secondPrompt=="1"){
+        arrayTwo.push(arrayOne[randomNumber])
+        return arrayOne[randomNumber]
+    }
+    else{
+        return arrayTwo[arrayTwo.length-1]
+    }
+}
+
 let restaurantPlaceHolder=["Restaurant"]
 let restaurantArray=["McDonald's", "Wendy's", "Burger King", "White Castle"]
 function randomRestaurantSelector(arrayOne,arrayTwo){
@@ -245,7 +259,7 @@ while(secondPrompt>=1 && secondPrompt<=4){
 
 if(secondPrompt==="OK"){
     prompt("Trip confirmed! Press OK and view your details in the console.")
-    console.log(randomRestaurantSelector(restaurantArray, restaurantPlaceHolder))
+    console.log(`Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
 }
 else{
     prompt("Error! Invalid syntax")
