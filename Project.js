@@ -17,7 +17,7 @@ function randomDestinationSelector(arrayOne,arrayTwo){
 }
 
 let restaurantPlaceHolder=["Restaurant"]
-let restaurantArray=["McDonald's", "Wendy's", "Burger King", "White Castle"]
+let restaurantArray=["McDonald's", "Wendy's", "Burger King", "White Castle", "Taco Bell", "Subway", "Buffalo Wild Wings"]
 function randomRestaurantSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
     if(firstPrompt=="Next" || secondPrompt=="2"){
