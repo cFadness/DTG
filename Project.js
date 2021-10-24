@@ -7,7 +7,7 @@ let destinationPlaceHolder=["Destination"]
 let destinationArray=["Houston", "Chicago", "Duluth", "San Diego", "Salem", "Miami", "Phoenix", "Cleveland", "New York City", "Jacksonville"]
 function randomDestinationSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
-    if(firstPrompt=="Next" || secondPrompt=="1"){
+    if(firstPrompt=="Next" || secondPrompt=="1" || secondPrompt=="5"){
         arrayTwo.push(arrayOne[randomNumber])
         return arrayOne[randomNumber]
     }
@@ -20,7 +20,7 @@ let restaurantPlaceHolder=["Restaurant"]
 let restaurantArray=["McDonald's", "Wendy's", "Burger King", "White Castle", "Taco Bell", "Subway", "Buffalo Wild Wings"]
 function randomRestaurantSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
-    if(firstPrompt=="Next" || secondPrompt=="2"){
+    if(firstPrompt=="Next" || secondPrompt=="2" || secondPrompt=="5"){
         arrayTwo.push(arrayOne[randomNumber])
         return arrayOne[randomNumber]
     }
@@ -33,7 +33,7 @@ let transportationPlaceHolder=["Transportation"]
 let transportationArray=["Rental Car", "Biking", "Walking", "Uber"]
 function randomTransportationSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
-    if(firstPrompt=="Next" || secondPrompt=="3"){
+    if(firstPrompt=="Next" || secondPrompt=="3" || secondPrompt=="5"){
         arrayTwo.push(arrayOne[randomNumber])
         return arrayOne[randomNumber]
     }
@@ -46,7 +46,7 @@ let entertainmentPlaceHolder=["Entertainment"]
 let entertainmentArray=["Sight seeing", "Bowling", "Comedy Show", "Dancing", "Movie Theater"]
 function randomEntertainmentSelector(arrayOne,arrayTwo){
     let randomNumber=Math.floor(Math.random() * arrayOne.length)
-    if(firstPrompt=="Next" || secondPrompt=="4"){
+    if(firstPrompt=="Next" || secondPrompt=="4" || secondPrompt=="5"){
         arrayTwo.push(arrayOne[randomNumber])
         return arrayOne[randomNumber]
     }
@@ -83,11 +83,11 @@ secondPrompt=prompt(`Your trip looks like this:
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+Type 1, 2, 3, or 4 to make changes, respectively. Type '5' to change all options. When satisfied, type 'OK'`)
 
 firstPrompt="Anything, but 'Next'"
 
-while(secondPrompt!=="1" && secondPrompt!=="2" && secondPrompt!=="3" && secondPrompt!=="4" && secondPrompt!=="OK"){
+while(secondPrompt!=="1" && secondPrompt!=="2" && secondPrompt!=="3" && secondPrompt!=="4" && secondPrompt!=="5" && secondPrompt!=="OK"){
     alert("Error! Invalid syntax")
     secondPrompt=prompt(`Your trip looks like this:
 
@@ -96,11 +96,11 @@ while(secondPrompt!=="1" && secondPrompt!=="2" && secondPrompt!=="3" && secondPr
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+Type 1, 2, 3, or 4 to make changes, respectively. Type '5' to change all options. When satisfied, type 'OK'`)
 }
 
 while(secondPrompt!=="OK"){
-    if(secondPrompt>=1 && secondPrompt<=4){
+    if(secondPrompt>=1 && secondPrompt<=5){
         secondPrompt=prompt(`Your trip looks like this:
 
 1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
@@ -108,7 +108,7 @@ while(secondPrompt!=="OK"){
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+Type 1, 2, 3, or 4 to make changes, respectively. Type '5' to change all options. When satisfied, type 'OK'`)
     }
     else{
         alert("Error! Invalid syntax")
@@ -119,7 +119,7 @@ Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+Type 1, 2, 3, or 4 to make changes, respectively. Type '5' to change all options. When satisfied, type 'OK'`)
     }
 }
 
