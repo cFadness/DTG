@@ -64,6 +64,18 @@ ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
 Type 'Next' to continue`)
 
+while(firstPrompt!=="Next"){
+    alert("Error! Invalid syntax")
+    firstPrompt=prompt(`This is the Random Day Trip Generator.
+
+${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
+${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
+${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
+
+Type 'Next' to continue`)
+}
+
 secondPrompt=prompt(`Your trip looks like this:
 
 1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
@@ -71,11 +83,12 @@ secondPrompt=prompt(`Your trip looks like this:
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-Enter 1, 2, 3, or 4 to make changes. When satisfied, enter 'OK'`)
+Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
 
 firstPrompt="Anything, but 'Next'"
 
-while(secondPrompt>=1 && secondPrompt<=4){
+while(secondPrompt!=="1" && secondPrompt!=="2" && secondPrompt!=="3" && secondPrompt!=="4" && secondPrompt!=="OK"){
+    alert("Error! Invalid syntax")
     secondPrompt=prompt(`Your trip looks like this:
 
 1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
@@ -83,16 +96,35 @@ while(secondPrompt>=1 && secondPrompt<=4){
 3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
 4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
 
-    Enter 1, 2, 3, or 4 to make changes. When satisfied, enter OK`)
+Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
 }
 
-if(secondPrompt==="OK"){
-    alert("Trip confirmed! Press OK and view your details in the console.")
-    console.log(`Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}`)
-    console.log(`Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
-    console.log(`Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}`)
-    console.log(`Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}`)
+while(secondPrompt!=="OK"){
+    if(secondPrompt>=1 && secondPrompt<=4){
+        secondPrompt=prompt(`Your trip looks like this:
+
+1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
+2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
+4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
+
+Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+    }
+    else{
+        alert("Error! Invalid syntax")
+        secondPrompt=prompt(`Your trip looks like this:
+
+1. Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}
+2. Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}
+3. Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}
+4. Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}
+
+Type 1, 2, 3, or 4 to make changes. When satisfied, type 'OK'`)
+    }
 }
-else{
-    alert("Error! Invalid syntax")
-}
+
+alert("Trip confirmed! Press OK and view your details in the console.")
+console.log(`Destination: ${randomDestinationSelector(destinationArray, destinationPlaceHolder)}`)
+console.log(`Restaurant: ${randomRestaurantSelector(restaurantArray, restaurantPlaceHolder)}`)
+console.log(`Transportation: ${randomTransportationSelector(transportationArray, transportationPlaceHolder)}`)
+console.log(`Entertainment: ${randomEntertainmentSelector(entertainmentArray, entertainmentPlaceHolder)}`)
